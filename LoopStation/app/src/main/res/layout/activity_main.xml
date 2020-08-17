@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/setter_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:background="@drawable/setterblank"
+        android:layout_alignParentTop="true"
+        >
+        <Button
+            android:id="@+id/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Track"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/addtrack"
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            ></Button>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text=""></TextView>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_below="@+id/setter_top_layout"
+        android:layout_above="@+id/setter_bottom_layout"
+        android:id="@+id/track_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trackpage"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trackpage"
+            android:layout_centerVertical="true"
+            ></ImageView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/track_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/setter_bottom_layout"
+        android:background="@drawable/setterblank2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="40dp"
+        >
+        <Button
+            android:id="@+id/record_btn"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:background="@drawable/record"
+            android:layout_gravity="center_vertical"
+            ></Button>
+
+        <Button
+            android:id="@+id/metronome"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:background="@drawable/metronome"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            ></Button>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/btm_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="BPM : 60"></TextView>
+                <SeekBar
+                    android:id="@+id/bpm_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></SeekBar>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Select Inst"
+                    ></TextView>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inst_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:hint="Path: ex) fold/music.mp3"
+                    android:textColorHint="@color/gray"
+                    ></com.google.android.material.textfield.TextInputEditText>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
